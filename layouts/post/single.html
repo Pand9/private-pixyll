@@ -5,7 +5,11 @@
     <div class="measure">
       <div class="post-header mb2">
         <h1 class="py2">{{ .Title }}</h1>
+{{ if .Params.author }}
         <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }} by {{ .Params.author }}</span><br>
+{{ else }}
+        <span class="post-meta">{{ .Date.Format "Jan 2, 2006" }}</span><br>
+{{ end }}
         {{ $baseurl := .Site.BaseURL }}
       </div>
 
